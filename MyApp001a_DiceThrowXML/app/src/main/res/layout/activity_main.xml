@@ -31,6 +31,17 @@
         android:textSize="120sp"
         android:textColor="#352068" />
 
+    <!-- Přidané vylepšení: Informační text -->
+    <TextView
+        android:id="@+id/tvResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:text="Click to Roll!"
+        android:textSize="20sp"
+        android:textStyle="italic"
+        android:textColor="#5e4b8a" />
+
     <Button
         android:id="@+id/btnRoll"
         android:layout_width="wrap_content"
