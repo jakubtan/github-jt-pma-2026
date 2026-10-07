@@ -39,7 +39,6 @@ fun DiceApp() {
     var isRolling by remember { mutableStateOf(false) }
     val scope = rememberCoroutineScope()
 
-
     val backgroundColor = Color(0xFFF5F3FF)
     val primaryColor = Color(0xFF352060)
 }
