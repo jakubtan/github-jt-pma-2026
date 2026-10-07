@@ -24,6 +24,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -49,10 +50,16 @@ fun DiceApp() {
     val diceSymbols = listOf("⚀", "⚁", "⚂", "⚃", "⚄", "⚅")
     var diceValue by remember { mutableStateOf(1) }
     var isRolling by remember { mutableStateOf(false) }
+
+    // Přidaná logika: Stav pro informační text
+    var resultText by remember { mutableStateOf("Click to Roll!") }
+
     val scope = rememberCoroutineScope()
 
     val backgroundColor = Color(0xFFF5F3FF)
     val primaryColor = Color(0xFF352060)
+    // Přidaná barva pro text
+    val secondaryColor = Color(0xFF5E4B8A)
 
     Column(
         modifier = Modifier
@@ -64,7 +71,7 @@ fun DiceApp() {
         verticalArrangement = Arrangement.Center
     ) {
         Text(
-            text = "Roll the Dice",
+            text = "Roll the Dice!",
             fontSize = 28.sp,
             fontWeight = FontWeight.Bold,
             color = primaryColor
@@ -76,6 +83,15 @@ fun DiceApp() {
             modifier = Modifier.padding(vertical = 24.dp)
         )
 
+        // Přidaná logika: Textové pole pro zpětnou vazbu
+        Text(
+            text = resultText,
+            fontSize = 20.sp,
+            fontStyle = FontStyle.Italic,
+            color = secondaryColor,
+            modifier = Modifier.padding(bottom = 32.dp)
+        )
+
         Button(
             enabled = !isRolling,
             colors = ButtonDefaults.buttonColors(
@@ -84,13 +100,17 @@ fun DiceApp() {
             ),
             onClick = {
                 isRolling = true
+                resultText = "Rolling..."
 
                 scope.launch {
                     repeat(10) {
                         diceValue = (1..6).random()
                         delay(250)
                     }
+                    // Finální hodnota
                     diceValue = (1..6).random()
+                    // Zobrazení výsledku
+                    resultText = "You rolled a $diceValue!"
                     isRolling = false
                 }
             }
