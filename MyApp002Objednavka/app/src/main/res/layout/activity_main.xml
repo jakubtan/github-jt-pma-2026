@@ -41,36 +41,52 @@
             android:layout_height="wrap_content"
             android:text="Kozel 10"
             android:textStyle="bold"
-            android:checked="true"/>
+            android:checked="true"
+            android:padding="16dp"/>
 
         <RadioButton
             android:id="@+id/rbBeer2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Kozel 11"
-            android:textStyle="bold"/>
+            android:textStyle="bold"
+            android:padding="16dp"/>
+
+        <RadioButton
+            android:id="@+id/rbBeer3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Braník 10"
+            android:textStyle="bold"
+            android:padding="16dp"/>
     </RadioGroup>
 
-    <RadioButton
+    <TextView
+        android:id="@+id/tvOrderTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add to your order: "
+        android:textSize="16sp" />
+
+    <CheckBox
         android:id="@+id/rbBottle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Bottle"
-        android:layout_marginLeft="16dp"
-        android:checked="true"/>
+        android:text="Slané brambůrky"
+        android:layout_marginLeft="16dp"/>
 
-    <RadioButton
+    <CheckBox
         android:id="@+id/rbCan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Can"
+        android:text="Utopenec"
         android:layout_marginLeft="16dp"/>
 
-    <RadioButton
+    <CheckBox
         android:id="@+id/rbBarrel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Barrel"
+        android:text="Nakládaný hermelín"
         android:layout_marginLeft="16dp"/>
 
     <Button
@@ -78,15 +94,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/button_order_text"
-        android:layout_marginLeft="16dp"/>
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"/>
 
     <TextView
         android:id="@+id/tvOrder"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/textview_order_summary_text"
-        android:background="#f0f0f0"
-        android:layout_marginTop="20dp"
         android:padding="16dp"/>
     
     <ImageView
@@ -94,7 +109,7 @@
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:layout_marginTop="20dp"
-        android:src="@drawable/koz_10_bottle"
+        android:src="@drawable/koz_10"
         android:scaleType="centerInside"/>
 
 </LinearLayout>
