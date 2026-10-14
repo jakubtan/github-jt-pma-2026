@@ -69,24 +69,24 @@
         android:textSize="16sp" />
 
     <CheckBox
-        android:id="@+id/rbBottle"
+        android:id="@+id/cbChips"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Slané brambůrky"
+        android:text="Chips"
         android:layout_marginLeft="16dp"/>
 
     <CheckBox
-        android:id="@+id/rbCan"
+        android:id="@+id/cbPickledSausage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Utopenec"
+        android:text="Pickled sausage"
         android:layout_marginLeft="16dp"/>
 
     <CheckBox
-        android:id="@+id/rbBarrel"
+        android:id="@+id/cbPickledCamembert"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Nakládaný hermelín"
+        android:text="Pickled Camembert"
         android:layout_marginLeft="16dp"/>
 
     <Button

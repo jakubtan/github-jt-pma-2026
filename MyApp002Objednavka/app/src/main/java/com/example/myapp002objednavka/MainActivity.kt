@@ -5,16 +5,63 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.myapp002objednavka.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+
+    // 1. Binding - deklarace binding objektu s odloženou inicializací
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContentView(R.layout.activity_main)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+
+        // 2. Binding - nafouknutí (inflate) layoutu do binding instance
+        binding = ActivityMainBinding.inflate(layoutInflater)
+
+        // 3. Nastavení kořenového pohledu (root) do okna aktivity
+        setContentView(binding.root)
+
+        //setContentView(R.layout.activity_main)
+        // Ošetření systémových lišt – použije se přímo binding.main nebo binding.root
+        ViewCompat.setOnApplyWindowInsetsListener(binding.main) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
+        }
+
+        binding.btnOrder.setOnClickListener {
+            val beer = when (binding.rgBeers.checkedRadioButtonId) {
+                binding.rbBeer1.id -> binding.rbBeer1 // Pokud sedí ID prvního tlačítka, použij rbBike1
+                binding.rbBeer2.id -> binding.rbBeer2
+                binding.rbBeer3.id -> binding.rbBeer3
+
+                else -> binding.rbBeer1   // Záložní možnost (fallback), kdyby nebylo vybráno nic
+            }
+
+            val fork = binding.cbChips.isChecked
+            val saddle = binding.cbPickledSausage.isChecked
+            val handleBar = binding.cbPickledCamembert.isChecked
+
+            val orderText = "Order summary: " + "${beer.text}" +
+                    (if(fork) "; Chips" else "") +
+                    (if(saddle) "; Pickled sausage" else "") +
+                    (if(handleBar) "; Pickled Camembert" else "")
+
+            binding.tvOrder.text = orderText
+
+            // Změna obrázku v závislosti na vybraném radiobuttonu
+
+            binding.rbBeer1.setOnClickListener {
+                binding.ivBeer.setImageResource(R.drawable.koz_10)
+            }
+
+            binding.rbBeer2.setOnClickListener {
+                binding.ivBeer.setImageResource(R.drawable.koz_11)
+            }
+
+            binding.rbBeer3.setOnClickListener {
+                binding.ivBeer.setImageResource(R.drawable.bran_10)
+            }
         }
     }
 }
