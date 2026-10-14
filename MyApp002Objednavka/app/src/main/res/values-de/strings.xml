@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Bierbestellung</string>
+    <string name="header_title">Bierbestellung</string>
+    <string name="order_title">Welches Bier möchten Sie bestellen?</string>
+
+    <string name="beer_1">Kozel 10</string>
+    <string name="beer_2">Kozel 11</string>
+    <string name="beer_3">Braník 10</string>
+
+    <string name="add_order">Fügen Sie etwas hinzu:</string>
+    <string name="snack_chips">Chips</string>
+    <string name="snack_sausage">Eingelegte Wurst</string>
+    <string name="snack_camembert">Eingelegter Camembert</string>
+
+    <string name="button_order_text">Bestellen</string>
+    <string name="textview_order_summary_text">Bestellübersicht:</string>
+    <string name="toast_order_success">Die Bestellung von %1$s wurde erfolgreich gesendet!</string>
+</resources>

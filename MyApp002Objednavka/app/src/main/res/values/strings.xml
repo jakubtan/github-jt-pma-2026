@@ -1,5 +1,18 @@
 <resources>
-    <string name="app_name">MyApp002Objednavka</string>
-    <string name="textview_order_summary_text">Order summary:</string>
+    <string name="app_name">Beer Order</string>
+    <string name="header_title">Beer order</string>
+    <string name="order_title">Which beer do you want to order?</string>
+
+    <string name="beer_1">Kozel 10</string>
+    <string name="beer_2">Kozel 11</string>
+    <string name="beer_3">Braník 10</string>
+
+    <string name="add_order">Add to your order:</string>
+    <string name="snack_chips">Chips</string>
+    <string name="snack_sausage">Pickled sausage</string>
+    <string name="snack_camembert">Pickled Camembert</string>
+
     <string name="button_order_text">Order</string>
+    <string name="textview_order_summary_text">Order summary:</string>
+    <string name="toast_order_success">The order of %1$s was successfully sent!</string>
 </resources>

@@ -41,14 +41,14 @@ class MainActivity : AppCompatActivity() {
                 else -> binding.rbBeer1   // Záložní možnost (fallback), kdyby nebylo vybráno nic
             }
 
-            val fork = binding.cbChips.isChecked
-            val saddle = binding.cbPickledSausage.isChecked
-            val handleBar = binding.cbPickledCamembert.isChecked
+            val chips = binding.cbChips.isChecked
+            val pickled_sausage = binding.cbPickledSausage.isChecked
+            val pickled_camembert = binding.cbPickledCamembert.isChecked
 
             val orderText = "Order summary: " + "${beer.text}" +
-                    (if(fork) "; Chips" else "") +
-                    (if(saddle) "; Pickled sausage" else "") +
-                    (if(handleBar) "; Pickled Camembert" else "")
+                    (if(chips) "; Chips" else "") +
+                    (if(pickled_sausage) "; Pickled sausage" else "") +
+                    (if(pickled_camembert) "; Pickled Camembert" else "")
 
             binding.tvOrder.text = orderText
 

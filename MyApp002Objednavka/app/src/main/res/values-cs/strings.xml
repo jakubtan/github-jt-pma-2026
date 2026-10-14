@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Objednávka piva</string>
+    <string name="header_title">Objednávka piva</string>
+    <string name="order_title">Jaké pivo si chceš objednat?</string>
+
+    <string name="beer_1">Kozel 10</string>
+    <string name="beer_2">Kozel 11</string>
+    <string name="beer_3">Braník 10</string>
+
+    <string name="add_order">Přidej si něco na zub:</string>
+    <string name="snack_chips">Brambůrky</string>
+    <string name="snack_sausage">Utopenec</string>
+    <string name="snack_camembert">Nakládaný hermelín</string>
+
+    <string name="button_order_text">Objednat</string>
+    <string name="textview_order_summary_text">Souhrn objednávky:</string>
+    <string name="toast_order_success">Objednávka piva %1$s byla úspěšně odeslána!</string>
+</resources>
