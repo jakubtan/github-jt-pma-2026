@@ -16,4 +16,7 @@
     <string name="button_order_text">Bestellen</string>
     <string name="textview_order_summary_text">Bestellübersicht:</string>
     <string name="toast_order_success">Die Bestellung von %1$s wurde erfolgreich gesendet!</string>
+
+    <string name="switch_age">Ich bin 18 Jahre oder älter</string>
+    <string name="toast_age_error">Sie müssen mindestens 18 Jahre alt sein, um Bier zu bestellen!</string>
 </resources>

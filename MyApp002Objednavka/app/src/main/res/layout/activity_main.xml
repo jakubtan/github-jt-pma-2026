@@ -97,6 +97,16 @@
         android:layout_marginLeft="16dp"
         android:layout_marginTop="8dp"/>
 
+    <!-- Nová funkce: Ověření věku -->
+    <Switch
+        android:id="@+id/swAge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/switch_age"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="8dp"/>
+
     <TextView
         android:id="@+id/tvOrder"
         android:layout_width="match_parent"

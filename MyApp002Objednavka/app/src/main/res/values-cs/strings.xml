@@ -16,4 +16,7 @@
     <string name="button_order_text">Objednat</string>
     <string name="textview_order_summary_text">Souhrn objednávky:</string>
     <string name="toast_order_success">Objednávka piva %1$s byla úspěšně odeslána!</string>
+
+    <string name="switch_age">Je mi 18 let nebo více</string>
+    <string name="toast_age_error">Pro objednání piva ti musí být alespoň 18 let!</string>
 </resources>

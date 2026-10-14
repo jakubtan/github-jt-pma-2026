@@ -15,4 +15,7 @@
     <string name="button_order_text">Order</string>
     <string name="textview_order_summary_text">Order summary:</string>
     <string name="toast_order_success">The order of %1$s was successfully sent!</string>
+
+    <string name="switch_age">I am 18 years or older</string>
+    <string name="toast_age_error">You must be at least 18 years old to order beer!</string>
 </resources>

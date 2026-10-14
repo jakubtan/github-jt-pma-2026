@@ -39,6 +39,15 @@ class MainActivity : AppCompatActivity() {
 
         // 4. Binding - přímý a bezpečný přístup k prvkům layoutu přes binding.<id>
         binding.btnOrder.setOnClickListener {
+            // NOVÁ FUNKCE: Kontrola plnoletosti
+            if (!binding.swAge.isChecked) {
+                Toast.makeText(
+                    this,
+                    getString(R.string.toast_age_error),
+                    Toast.LENGTH_LONG
+                ).show()
+                return@setOnClickListener // Přeruší další vykonávání kódu
+            }
             // Zjistí vybraný RadioButton ze skupiny rgBeers
             val beer = when (binding.rgBeers.checkedRadioButtonId) {
                 binding.rbBeer1.id -> binding.rbBeer1
