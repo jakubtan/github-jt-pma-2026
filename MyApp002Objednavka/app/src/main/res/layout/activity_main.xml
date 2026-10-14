@@ -62,7 +62,7 @@
     </RadioGroup>
 
     <TextView
-        android:id="@+id/tvOrderTitle"
+        android:id="@+id/tvAddOrder"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Add to your order: "

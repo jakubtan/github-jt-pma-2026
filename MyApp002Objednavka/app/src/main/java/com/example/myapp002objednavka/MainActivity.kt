@@ -1,6 +1,7 @@
 package com.example.myapp002objednavka
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -18,7 +19,7 @@ class MainActivity : AppCompatActivity() {
         // 2. Binding - nafouknutí (inflate) layoutu do binding instance
         binding = ActivityMainBinding.inflate(layoutInflater)
 
-        // 3. Nastavení kořenového pohledu (root) do okna aktivity
+        // 3. Binding - Nastavení kořenového pohledu (root) do okna aktivity
         setContentView(binding.root)
 
         //setContentView(R.layout.activity_main)
@@ -29,7 +30,9 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
+        // 4. Binding - přímý a bezpečný přístup k prvkům layoutu přes binding.<id>
         binding.btnOrder.setOnClickListener {
+            // Zjistí vybraný RadioButton ze skupiny rgBikes; pokud není vybraný žádný, jako výchozí se použije rbBike1
             val beer = when (binding.rgBeers.checkedRadioButtonId) {
                 binding.rbBeer1.id -> binding.rbBeer1 // Pokud sedí ID prvního tlačítka, použij rbBike1
                 binding.rbBeer2.id -> binding.rbBeer2
@@ -48,6 +51,11 @@ class MainActivity : AppCompatActivity() {
                     (if(handleBar) "; Pickled Camembert" else "")
 
             binding.tvOrder.text = orderText
+
+            Toast.makeText(
+                this,
+                "The order of ${beer.text} was successfully sent!", Toast.LENGTH_SHORT
+            ).show()
 
             // Změna obrázku v závislosti na vybraném radiobuttonu
 
