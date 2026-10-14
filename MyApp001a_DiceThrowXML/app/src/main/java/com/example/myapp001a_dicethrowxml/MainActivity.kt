@@ -17,7 +17,6 @@ class MainActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
 
-        // Zajištění, aby obsah nepřekrývaly systémové lišty
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.llMain)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
@@ -25,34 +24,40 @@ class MainActivity : AppCompatActivity() {
         }
 
         val diceSymbols = listOf("⚀", "⚁", "⚂", "⚃", "⚄", "⚅")
-        val tvDice = findViewById<TextView>(R.id.tvDice)
+
+        // Načtení obou kostek z rozvržení
+        val tvDice1 = findViewById<TextView>(R.id.tvDice1)
+        val tvDice2 = findViewById<TextView>(R.id.tvDice2)
         val btnRoll = findViewById<Button>(R.id.btnRoll)
         val tvResult = findViewById<TextView>(R.id.tvResult)
 
         btnRoll.setOnClickListener {
             lifecycleScope.launch {
-                // Zakázání tlačítka během animace
                 btnRoll.isEnabled = false
-
-                // Informace pro uživatele
                 tvResult.text = "Rolling..."
 
-                // 10 náhodných změn s fixní prodlevou 250 ms
+                // Animace obou kostek současně
                 repeat(times = 10) {
-                    tvDice.text = diceSymbols.random()
+                    tvDice1.text = diceSymbols.random()
+                    tvDice2.text = diceSymbols.random()
                     delay(timeMillis = 250)
                 }
 
-                // Výsledný hod a zobrazení textu
-                val finalIndex = diceSymbols.indices.random()
-                tvDice.text = diceSymbols[finalIndex]
+                // Finální hod pro první kostku
+                val finalIndex1 = diceSymbols.indices.random()
+                tvDice1.text = diceSymbols[finalIndex1]
+                val value1 = finalIndex1 + 1
 
-                val finalNumber = finalIndex + 1
-                tvResult.text = "You rolled a $finalNumber!"
+                // Finální hod pro druhou kostku
+                val finalIndex2 = diceSymbols.indices.random()
+                tvDice2.text = diceSymbols[finalIndex2]
+                val value2 = finalIndex2 + 1
 
-                // Povolení tlačítka po dokončení animace
+                // Výpočet celkového součtu
+                val totalSum = value1 + value2
+                tvResult.text = "Total score: $totalSum"
+
                 btnRoll.isEnabled = true
-
             }
         }
     }
