@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">MyApp002Objednavka</string>
+    <string name="textview_order_summary_text">Order summary:</string>
+    <string name="button_order_text">Order</string>
 </resources>
